@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
+Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon.png" />
+		<!-- Retina iPhone --> 
+		<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon.png" />
+		<!-- Standard iPad --> 
+		<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon.png" />
+		<!-- Retina iPad --> 
+		<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon.png" />
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    </head>
+
+
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. 
+            	Please <a href="http://browsehappy.com/">upgrade your browser</a> 
+            	or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Site content begins here -->
+        
+        <!-- Navbar -->
+	    <div class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container">
+	          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </a>
+	          <a class="brand" href="theBook.html">The Book</a>
+	          <div class="nav-collapse collapse">
+	            <ul class="nav pull-right">
+	              <li class="active"><a href="index.html">Home</a></li>
+	              <li><a href="index.html#about">About</a></li>
+	              <li><a href="index.html#contact">Contact</a></li>
+	            </ul>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="row">
+	    	<div id="myAlert" class="alert alert-success span9 offset1 hide" data-alert="alert" style="position:fixed;">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<h4>Great!</h4>Your species sighting has been successfully recorded. <a href="index.html">Click here</a>
+				 to go back.
+			</div>
+		</div>
+	    
+	    <div class="row">
+		    	<p class="well span10 offset1" align="justify">
+		    		Please provide us with as many details about the species you have identified as possible. If
+		    		you do not know the scientific name (binomial nomenclature) please return to the 
+		    		<a href="index.html">homepage</a> and select either <i>Submit a Photo</i> or <i>"Identify a Species"</i>
+		    	</p>
+	    </div>
+	
+	
+	    <div class="container">
+	   
+	    
+	    <!-- User Info Form -->
+	    <form class="form-horizontal" method="post" action="input2.php">
+	    <h3>Species Info</h3>
+			<div class="control-group">
+				<label class="control-label" for="inputSpecies">Species Sighted</label>
+					<div class="controls">
+						<select class="span6" name="inputSpecies" id="inputSpecies">
+							<option value="" disabled selected>Select species...</option>
+							<option value="" disabled>--Frogs--</option>
+								<option value="01"><i>Bufo viridis</i> sensu lato (Green Toad)</option>
+								<option value="02">Hyla savignyi (Lemon-yellow Tree Frog)</option>
+								<option value="03">Pelophylax cypriensis (Cyprus Water Frog)</option>
+							<option value="" disabled>--Turtles--</option>
+								<option value="04">Caretta caretta (Loggerhead Turtle)</option>
+								<option vlaue="05">Chelonia mydas (Green Turtle)</option>
+								<option value="06">Mauremys rivulata (Balkan Terrapin)</option>
+								<option vlaue="07">Trachemys scripta (Pond Slider)</option>
+								<option vlaue="08">Testudo spp. (Tortoises) </option>
+							<option value="" disabled>--Lizards--</option>
+								<option value="09">Laudakia stellio (Starred Agama)</option>
+								<option value="10">Chamaeleo chamaeleon (European Chameleon)</option>
+								<option value="11">Cyrtopodion kotschyi (Kotschy’s Gecko)</option>
+								<option vlaue="12">Hemidactylus turcicus (Turkish Gecko)</option>
+								<option value="13">Acanthodactylus schreiberi (Spiny-footed Lizard)</option>
+								<option vlaue="14">Ophisops elegans (Snake-eyed Lizard)</option>
+								<option value="15">Phoenicolacerta troodica (Troodos Lizard)</option>
+								<option vlaue="16">Ablepharus budaki (Snake-eyed Skink)</option>
+								<option value="17">Chalcides ocellatus (Ocellated Skink)</option>
+								<option vlaue="18">Eumeces schneiderii (Spotted Skink)</option>
+								<option value="19">Trachylepis vittata (Striped Skink)</option>
+							<option value="" disabled>--Snakes--</option>
+								<option value="20">Typhlops vermicularis (Worm Snake)</option>
+								<option value="21">Dolichophis jugularis (Large Whip Snake)</option>
+								<option value="22">Eirenis levantinus (Levantine Dwarf Snake)</option>
+								<option vlaue="23">Hemorrhois nummifer (Coin Snake)</option>
+								<option value="24">Hierophis cypriensis (Cyprus Whip Snake)</option>
+								<option vlaue="25">Natrix natrix (Grass Snake)</option>
+								<option value="26">Natrix tessellata (Dice Snake)</option>
+								<option vlaue="27">Platyceps najadum (Dahl’s Whip Snake)</option>
+								<option value="28">Telescopus fallax (Cat Snake)</option>
+								<option vlaue="29">Malpolon insignitus (Eastern Montpellier Snake)</option>
+								<option value="30">Macrovipera lebetina (Blunt-nosed Viper)</option>
+						</select>
+					</div>
+			</div> <br>
+			
+			<div class="control-group">
+				<label class="control-label" for="inputCertainty">Degree of Certainty</label>
+				<div class="controls">
+					<select class="span4" name="inputCertainty" id="inputCertainty" >
+						<option value="" disabled selected>Select degree of certainty...</option>
+						<option value="1">Very certain</option>
+						<option value="2">Moderately certain</option>
+						<option value="3">Somewhat certain</option>
+						<option vlaue="4">Unsure</option>
+					</select>
+				</div>
+			</div> <br>
+			
+			<div class="control-group">
+				<label class="control-label" for="inputLatitudeDec">GPS Coordinates</label>
+					<div class="controls">
+						<input type="text" name="inputLatitudeDec" id="inputLatitudeDec" placeholder="Latitude (N)">
+						<input type="text" name="inputLongitudeDec" id="inputLongitudeDec" placeholder="Longitude (E)">
+					</div>
+			</div> <br>
+			
+			<div class="control-group">
+				<label class="control-label" for="inputSightingDate">Date of Sighting</label>
+					<div class="controls">
+						<input id="inputSightingDate" name="inputSightingDate" class="span3" type="text" placeholder="select date..."></input>
+						<input id="inputTime" name="inputTime" type="number" placeholder="Time (24hr)" data-mask="99:99">
+					</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label" for="inputPhoto">Photograph</label>
+					<div class="fileupload fileupload-new offset2" data-provides="fileupload" id="inputPhoto" name="inputPhoto">
+					  <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+					  	<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image"/>
+					  </div>
+					  <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+					  <div>
+					    <span class="btn btn-file"><span class="fileupload-new">Select image</span>
+					    <span class="fileupload-exists">Change</span>
+					    <input type="file" /></span>
+					    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+					  </div>
+					</div>
+			</div> <br />
+			
+			<div class="control-group">
+				<label class="control-label" for="inputComments">Additional Comments</label>
+					<div class="controls">
+						<textarea rows="5" class="span6" name="inputComments" id="inputComments" placeholder="..."></textarea>
+					</div>
+			</div> <br>
+			
+			<hr>
+			<h3>Contact Info</h3>
+				<div class="control-group">
+					<label class="control-label" for="inputFirstName">Name</label>
+						<div class="controls">
+							<input type="text" name="inputFirstName" id="inputFirstName" placeholder="First">
+							<input type="text" name="inputLastName" id="inputLastName" placeholder="Last">
+						</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">Email Address</label>
+						<div class="controls">
+							<input type="email" name="inputEmail" id="inputEmail" placeholder="Email" required>
+							<label class="checkbox">
+								<input type="checkbox" name="inputCorrespondence" value="1"> Sign up for correspondence
+							</label>
+						</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPhone">Phone Numnber</label>
+						<div class="controls">
+							<input type="tel" name="inputPhone" id="inputPhone" placeholder="Phone">
+						</div>
+				</div>
+				<div class="form-actions">
+					<input type="reset" class="btn-inverse" value="Clear">
+					<input type="submit" name="submit" class="btn-primary" value="Submit">
+				</div>
+			</form>	
+		<!-- /User Info Form -->
+		
+
+	    </div> <!-- /container -->
+	    
+	  <footer>
+			<address>
+				<strong>Felix Baier</strong><br>
+				795 Folsom Ave<br>
+				New York, CA 10683<br>
+				<abbr title="Phone">P:</abbr> (212) 456-7890<br>
+				<abbr title="Email">E:</abbr> FelixTheCat@gmail.de
+			</address>
+			<p align="right"><small>&copy; Felix Baier 2013</small></p>
+		</footer>
+
+	
+	    <!-- Le javascript
+	    ================================================== -->
+	    <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/bootstrap-fileupload.js"></script>
+        <script src="js/bootstrap-inputmask.js"></script>
+	    <script src="js/bootstrap-transition.js"></script>
+	    <script src="js/bootstrap-alert.js"></script>
+	    <script src="js/bootstrap-modal.js"></script>
+	    <script src="js/bootstrap-dropdown.js"></script>
+	    <script src="js/bootstrap-scrollspy.js"></script>
+	    <script src="js/bootstrap-tab.js"></script>
+	    <script src="js/bootstrap-tooltip.js"></script>
+	    <script src="js/bootstrap-popover.js"></script>
+	    <script src="js/bootstrap-button.js"></script>
+	    <script src="js/bootstrap-collapse.js"></script>
+	    <script src="js/bootstrap-carousel.js"></script>
+	    <script src="js/bootstrap-typeahead.js"></script>
+	    <script src="js/google-code-prettify/prettify.js"></script>
+	    <script src="js/bootstrap-datepicker.js"></script>
+	    <script type="text/jscript">
+	    		$('#inputSightingDate').datepicker({
+				format: 'dd-mm-yyyy'
+			});
+		</script>
+		<script type="text/javascript">
+			
+	    </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

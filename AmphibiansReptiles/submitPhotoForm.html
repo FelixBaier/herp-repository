@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Submit a Photo For Identification</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon.png" />
+		<!-- Retina iPhone --> 
+		<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon.png" />
+		<!-- Standard iPad --> 
+		<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon.png" />
+		<!-- Retina iPad --> 
+		<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon.png" />
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    </head>
+
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. 
+            	Please <a href="http://browsehappy.com/">upgrade your browser</a> 
+            	or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Site content begins here -->
+        
+        <!-- Navbar -->
+	    <div class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container">
+	          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </a>
+	          <a class="brand" href="theBook.html">The Book</a>
+	          <div class="nav-collapse collapse">
+	            <ul class="nav pull-right">
+	              <li class="active"><a href="index.html">Home</a></li>
+	              <li><a href="index.html#about">About</a></li>
+	              <li><a href="index.html#contact">Contact</a></li>
+	            </ul>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	    
+	    
+	    <div class="row">
+	    	<br><br><br>
+		    	<p class="well span10 offset1" align="justify">
+		    		Please provide us with as many details about the species you have identified as possible. If you
+		    		noticed any behavior or the animal's habitat please make note of this in the additional comments
+		    		section below. Any details you can provide will help us correctly identify the specie. Alternatively, 
+		    		if you are interested in a more immediate identification you can try the 
+		    		<a href="speciesIdentifier.hml">Species Identifier</a> or if you already know the species please use
+		    		the <a href="scientificNameForm.html">Scientific Name Form</a>.
+		    	</p>
+	    </div>
+	
+	
+	    <div class="container">
+	   
+	    
+	    <!-- User Info Form -->
+	    <form class="form-horizontal" id="userInfoForm">
+	    <h3>Animal Info</h3>
+	    <p><strong> Upload your photo here:</strong></p>
+			<div class="fileupload fileupload-new offset2" data-provides="fileupload">
+			  <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+			  	<img src="img/picture.jpg"/>
+			  </div>
+			  <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+			  <div>
+			    <span class="btn btn-file"><span class="fileupload-new">Select image</span>
+			    <span class="fileupload-exists">Change</span>
+			    <input type="file" /></span>
+			    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+			  </div>
+			</div> <br>
+			<div class="control-group">
+				<label class="control-label" for="inputComments">Additional Comments</label>
+					<div class="controls">
+						<textarea rows="5" class="span6" name="inputComments" id="inputComments" 
+						placeholder="..."></textarea>
+					</div>
+			</div>
+			<hr>
+			<h3>Contact Info</h3>
+				<div class="control-group">
+					<label class="control-label" for="inputFirstName">Name</label>
+						<div class="controls">
+							<input type="text" name="inputFirstName" id="inputFirstName" placeholder="First">
+							<input type="text" name="inputLastName" id="inputLastName" placeholder="Last">
+						</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">Email Address</label>
+						<div class="controls">
+							<input type="email" name="inputEmail" id="inputEmail" placeholder="Email">
+							<label class="checkbox">
+								<input type="checkbox" name="inputCorrespondence"> Sign up for correspondence
+							</label>
+						</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPhone">Phone Numnber</label>
+						<div class="controls">
+							<input type="tel" data-mask="(999) 999-9999" name="inputPhone" id="inputPhone" placeholder="Phone">
+						</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="reset" class="btn">Clear</button>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</form>
+		<!-- /User Info Form -->
+	    
+		<div class="row">
+	    	<div id="myAlert" class="alert alert-success span9 offset1 hide" data-alert="alert" style="position:fixed;">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<h4>Great!</h4>Your species sighting has been successfully recorded. <a href="index.html">Click here</a>
+				 to go back.
+			</div>
+			</div>
+	    </div> <!-- /container -->
+	    
+	    <div class="row-fluid">
+		  <footer>
+		  	<div class="row-fluid span8 offset2"
+		  	<address>
+		  		<strong>Felix Baier</strong><br>
+				795 Folsom Ave<br>
+				New York, CA 10683<br>
+				<abbr title="Phone">P:</abbr> (212) 456-7890<br>
+				<abbr title="Email">E:</abbr> FelixTheCat@gmail.de
+		  	</address>
+		    <p align="right"><small>&copy; Felix Baier 2013</small></p>
+		   </div>
+	      </footer>
+	    </div>
+
+	
+	    <!-- Le javascript
+	    ================================================== -->
+	    <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/formListener.js"></script>
+        <script src="js/bootstrap-fileupload.js"></script>
+        <script src="js/bootstrap-inputmask.js"></script>
+	    <script src="js/bootstrap-transition.js"></script>
+	    <script src="js/bootstrap-alert.js"></script>
+	    <script src="js/bootstrap-modal.js"></script>
+	    <script src="js/bootstrap-dropdown.js"></script>
+	    <script src="js/bootstrap-scrollspy.js"></script>
+	    <script src="js/bootstrap-tab.js"></script>
+	    <script src="js/bootstrap-tooltip.js"></script>
+	    <script src="js/bootstrap-popover.js"></script>
+	    <script src="js/bootstrap-button.js"></script>
+	    <script src="js/bootstrap-collapse.js"></script>
+	    <script src="js/bootstrap-carousel.js"></script>
+	    <script src="js/bootstrap-typeahead.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
