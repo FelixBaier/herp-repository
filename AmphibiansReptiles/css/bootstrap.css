@@ -30,10 +30,10 @@ footer {
         background-clip: border-box;
         background-origin: padding-box;
         background-size: auto auto;
-    padding: 10px 15px 80px;
+    padding: 10px 15px 10px;
         padding-top: 10px;
         padding-right-value: 15px;
-        padding-bottom: 80px;
+        padding-bottom: 10px;
         padding-left-value: 15px;
         padding-left-ltr-source: physical;
         padding-left-rtl-source: physical;
@@ -1695,7 +1695,7 @@ hgroup,
 nav,
 section {
   display: block;
-  padding-top: 40px;
+  padding-top: 10px;
 }
 
 audio,
@@ -1927,11 +1927,6 @@ a:hover {
 .img-polaroid {
   padding: 4px;
   background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .img-circle {
@@ -2428,7 +2423,7 @@ h1 {
 }
 
 h2 {
-  font-size: 31.5px;
+  font-size: 28px;
 }
 
 h3 {
@@ -7666,11 +7661,11 @@ a.badge:hover {
 }
 
 .hero-unit {
-  padding: 60px;
-  margin-bottom: 30px;
-  font-size: 18px;
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
   font-weight: 200;
-  line-height: 30px;
+  line-height: 20px;
   color: inherit;
   background-color: #eeeeee;
   -webkit-border-radius: 6px;
@@ -7680,7 +7675,7 @@ a.badge:hover {
 
 .hero-unit h1 {
   margin-bottom: 0;
-  font-size: 60px;
+  font-size: 36px;
   line-height: 1;
   letter-spacing: -1px;
   color: inherit;

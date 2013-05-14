@@ -48,24 +48,22 @@
 	          <div class="nav-collapse collapse">
 	            <ul class="nav pull-right">
 	              <li class="active"><a href="index.html">Home</a></li>
-	              <li><a href="index.html#about">About</a></li>
-	              <li><a href="index.html#contact">Contact</a></li>
+	              <li><a href="index.html#About">About</a></li>
+	              <li><a href="index.html#FAQ">FAQ</a></li>
+	              <li><a href="index.html#Research">Research Data</a></li>
+	              <li><a href="index.html#Contact">Contact</a></li>
 	            </ul>
 	          </div>
 	        </div>
 	      </div>
 	    </div>
 	    
-	    
-	    <div class="row">
-	    	<br><br><br>
-		    	<p class="well span10 offset1" align="justify">
-		    		Please provide us with as many details about the species you have identified as possible. If you
-		    		noticed any behavior or the animal's habitat please make note of this in the additional comments
-		    		section below. Any details you can provide will help us correctly identify the specie. Alternatively, 
-		    		if you are interested in a more immediate identification you can try the 
-		    		<a href="speciesIdentifier.hml">Species Identifier</a> or if you already know the species please use
-		    		the <a href="scientificNameForm.html">Scientific Name Form</a>.
+	    <br><br>
+	    <div class="container">
+		    	<p class="well" align="justify">
+		    		Please provide us with as many details as possible about the animal you have photographed. If you
+		    		noticed any interesting behavior, please make note of this in the additional comments
+		    		section below. If you already know the species' name, please <a href="scientificNameForm.html">Report a Sighting</a>.
 		    	</p>
 	    </div>
 	
@@ -75,7 +73,7 @@
 	    
 	    <!-- User Info Form -->
 	    <form class="form-horizontal" id="userInfoForm">
-	    <h3>Animal Info</h3>
+	    <h3>Submit a Photo</h3>
 	    <p><strong> Upload your photo here:</strong></p>
 			<div class="fileupload fileupload-new offset2" data-provides="fileupload">
 			  <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
@@ -88,7 +86,26 @@
 			    <input type="file" /></span>
 			    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
 			  </div>
-			</div> <br>
+			</div>
+			
+			<br>
+			
+			<div class="control-group">
+				<label class="control-label" for="inputLatitudeDec">GPS Coordinates</label>
+					<div class="controls">
+						<input type="text" name="inputLatitudeDec" id="inputLatitudeDec" placeholder="Latitude (N)">
+						<input type="text" name="inputLongitudeDec" id="inputLongitudeDec" placeholder="Longitude (E)">
+					</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label" for="inputSightingDate">Date of Sighting</label>
+					<div class="controls">
+						<input id="inputSightingDate" name="inputSightingDate" class="span3" type="text" placeholder="select date..."></input>
+						<input id="inputTime" name="inputTime" type="number" placeholder="Time (24hr)" data-mask="99:99">
+					</div>
+			</div>
+			
 			<div class="control-group">
 				<label class="control-label" for="inputComments">Additional Comments</label>
 					<div class="controls">
@@ -108,24 +125,26 @@
 				<div class="control-group">
 					<label class="control-label" for="inputEmail">Email Address</label>
 						<div class="controls">
-							<input type="email" name="inputEmail" id="inputEmail" placeholder="Email">
+							<input type="email" name="inputEmail" id="inputEmail" placeholder="Email" required>
 							<label class="checkbox">
-								<input type="checkbox" name="inputCorrespondence"> Sign up for correspondence
+								<input type="checkbox" name="inputCorrespondence" value="1"> Sign up for correspondence
 							</label>
 						</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label" for="inputPhone">Phone Numnber</label>
+					<label class="control-label" for="inputPhone">Phone Number</label>
 						<div class="controls">
-							<input type="tel" data-mask="(999) 999-9999" name="inputPhone" id="inputPhone" placeholder="Phone">
+							<input type="tel" name="inputPhone" id="inputPhone" placeholder="Phone">
 						</div>
 				</div>
-				<div class="control-group">
-					<div class="controls">
-						<button type="reset" class="btn">Clear</button>
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</div>
+				
+				<hr>
+				
+				<div class="form-actions">
+					<input type="reset" class="btn-inverse" value="Clear">
+					<input type="submit" name="submit" class="btn-primary" value="Submit">
 				</div>
+				
 			</form>
 		<!-- /User Info Form -->
 	    
@@ -138,20 +157,9 @@
 			</div>
 	    </div> <!-- /container -->
 	    
-	    <div class="row-fluid">
-		  <footer>
-		  	<div class="row-fluid span8 offset2"
-		  	<address>
-		  		<strong>Felix Baier</strong><br>
-				795 Folsom Ave<br>
-				New York, CA 10683<br>
-				<abbr title="Phone">P:</abbr> (212) 456-7890<br>
-				<abbr title="Email">E:</abbr> FelixTheCat@gmail.de
-		  	</address>
-		    <p align="right"><small>&copy; Felix Baier 2013</small></p>
-		   </div>
-	      </footer>
-	    </div>
+	    <footer>
+			<p align="right"><small>&copy; HerpRepository 2013</small></p>
+		</footer>
 
 	
 	    <!-- Le javascript
