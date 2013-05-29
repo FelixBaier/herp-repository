@@ -24,9 +24,14 @@
 
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.css">
+        
+		<script type="text/javascript"
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkLVCWvc5KkOGyhYENaY13BJQAccSzc8Y&sensor=true">
+		</script>
     </head>
 
     <body>
+    	<body onload="mapa()">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. 
             	Please <a href="http://browsehappy.com/">upgrade your browser</a> 
@@ -97,6 +102,42 @@
 						<input type="text" name="inputLongitudeDec" id="inputLongitudeDec" placeholder="Longitude (E)">
 					</div>
 			</div>
+			
+			<div class="container">
+				<div class="span8 offset2">
+					<div class="alert alert-success">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<p>Click on the map below if you do not know the GPS Coordinates: </p>
+					</div>
+				</div>
+				<div class="map_canvas span8 offset2">
+					<div id="mapdiv" style="width:100%; height:300px;"></div>
+				</div>
+				<div class="span8 offset2">
+					<p class="muted"><b>Latitude:</b> <span id="latspan"></span>    <b>Longitude: </b> <span id="lngspan"></p>
+				<br>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				var map;
+				function mapa()
+				{
+					var opts = {'center': new google.maps.LatLng(35.09, 33.62091), 'zoom':8, 'mapTypeId': google.maps.MapTypeId.TERRAIN }
+					map = new google.maps.Map(document.getElementById('mapdiv'),opts);
+					
+					google.maps.event.addListener(map,'click',function(event) {
+						document.getElementById('inputLatitudeDec').value = event.latLng.lat()
+						document.getElementById('inputLongitudeDec').value = event.latLng.lng()
+					})
+				
+					google.maps.event.addListener(map,'mousemove',function(event) {
+						document.getElementById('latspan').innerHTML = event.latLng.lat()
+						document.getElementById('lngspan').innerHTML = event.latLng.lng()
+					});
+					
+				}
+			</script>
 			
 			<div class="control-group">
 				<label class="control-label" for="inputSightingDate">Date of Sighting</label>
