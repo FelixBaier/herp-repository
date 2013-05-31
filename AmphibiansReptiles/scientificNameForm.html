@@ -178,13 +178,13 @@ Transitional//EN"
 					map = new google.maps.Map(document.getElementById('mapdiv'),opts);
 					
 					google.maps.event.addListener(map,'click',function(event) {
-						document.getElementById('inputLatitudeDec').value = event.latLng.lat()
-						document.getElementById('inputLongitudeDec').value = event.latLng.lng()
+						document.getElementById('inputLatitudeDec').value = Math.round(event.latLng.lat()*100000)/100000
+						document.getElementById('inputLongitudeDec').value = Math.round(event.latLng.lng()*100000)/100000
 					})
 				
 					google.maps.event.addListener(map,'mousemove',function(event) {
-						document.getElementById('latspan').innerHTML = event.latLng.lat()
-						document.getElementById('lngspan').innerHTML = event.latLng.lng()
+						document.getElementById('latspan').innerHTML = Math.round(event.latLng.lat()*100000)/100000
+						document.getElementById('lngspan').innerHTML = Math.round(event.latLng.lng()*100000)/100000
 					});
 					
 				}
