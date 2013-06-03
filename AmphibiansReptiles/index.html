@@ -17,6 +17,7 @@
 	
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/bootstrap-responsive.css">
+		
 	</head>
 
 
@@ -55,53 +56,58 @@
 		</div>
 		<!-- END Navbar -->
 		
-		<div class="container container-fluid"> <!-- Container for entire body other than navbar -->
+		<div class="container container-semifluid"> <!-- Container for entire body other than navbar -->
 			
 			<!-- Main hero unit -->
-			<section id="Home">
-				<br>
-				<div class="hero-unit" id="top">
-					<h1 align="center">The Herp Repository of Cyprus</h1>
-				</div>
+			<section>
+					<br>
+					<div class="hero-unit" align="center" id="top">
+						<h1 align="center">The Herp Repository of Cyprus</h1>
+					</div>
 			</section>
 			<!-- END hero unit -->
 			
 			
 			<!-- BEGIN row of columns -->
 			<br>
-			<div class="row-fluid">
-				<div class="span4">
-					<div class="container" style="height: 375px; width: 100%">
-						<h2>Educate Yourself<br><br></h2>
-					<img src="img/magnifyingLens.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
-					<p align="left">Learn about the amphibians and reptiles of Cyprus! No matter if you are a Cyprus residents or just visiting the island:
-						this is where you will find your answers!</p>
-					<br>
+			<section>
+				<div class="row-fluid">
+					<div class="span4" id="column1">
+						<div class="span12 neat">
+							<h2>Educate Yourself</h2><br><br>
+							<img src="img/magnifyingLens.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
+							<p align="justify" padding="25px">Learn about the amphibians and reptiles of Cyprus! No matter if you are a Cyprus 
+								residents or just visiting the island: this is where you will find your answers!</p>
+						</div>
+						<div class="span12">
+							<a class="btn btn-large btn-success span12" href="educate.html">Educate &raquo;</a>
+						</div>
 					</div>
-					<p><a class="btn btn-large btn-success span11" href="educate.html">Educate &raquo;</a></p>
-				</div>
-				<div class="span4">
-					<div class="container" style="height: 375px; width: 100%">
-						<h2>Submit A Photo<br><small><i>unknown species</i></small></h2>
-					<img src="img/picture.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
-					<p align="left">If you observed a frog, lizard, snake, or terrapin in nature, AND took a photo of your observation, 
-						you can upload the photo here, together with information on where and when you took the photo.
-						 We will identify the species for you, and if requested, email you with information about the species identified.</p>
-					<br>
+					<div class="span4" id="column2">
+						<div class="span12 neat">
+							<h2>Submit A Photo<br><small><i>unknown species</i></small></h2>
+							<img src="img/picture.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
+							<p align="justify">If you observed a frog, lizard, snake, or terrapin in nature, AND took a photo of your observation, 
+								you can upload the photo here, together with information on where and when you took the photo. 
+								We will identify the species for you, and if requested, email you with information about the species identified.</p>
+						</div>
+						<div class="span12">
+							<a class="btn btn-large btn-primary span12" href="submitPhotoForm.html">Submit Photo &raquo;</a>
+						</div>
 					</div>
-					<p><a class="btn btn-large btn-primary span11" href="submitPhotoForm.html">Submit Photo &raquo;</a></p>
-				</div>
-				<div class="span4">
-					<div class="container" style="height: 375px; width: 100%">
-						<h2>Report A Sighting<br><small><i>known species</i></small></h2>
-					<img src="img/notebook.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
-					<p align="left">If you observed a frog, lizard, snake, or terrapin in nature, AND were able to identify the species, 
-						you can submit your record here, together with information on where and when you made the identification.</p>
-					<br>
+					<div class="span4" id="column3">
+						<div class="span12 neat">
+							<h2>Report A Sighting<br><small><i>known species</i></small></h2>
+							<img src="img/notebook.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
+							<p align="justify">If you observed a frog, lizard, snake, or terrapin in nature, AND were able to identify the species, 
+								you can submit your record here, together with information on where and when you made the identification.</p>
+						</div>
+						<div class="span12">
+							<a class="btn btn-large btn-danger span12" href="scientificNameForm.html">Report Sighting &raquo;</a>
+						</div>
 					</div>
-					<p><a class="btn btn-large btn-danger span11" href="scientificNameForm.html">Report Sighting &raquo;</a></p>
 				</div>
-			</div>
+			</section>
 			<!-- END row of columns -->
 			
 			<hr>
@@ -113,11 +119,10 @@
 						<h2 class="text-success">About</h2>
 						<div class="row-fluid span10 offset1">
 							<p class="lead" align="justify">
-							HerpRepository.org is a new way to engage the interested public in biodiversity research. We provide a platform for 
-					people to learn about the amphibians and reptiles of Cyprus and feed back their knowledge into scientific inquiry.
+							HerpRepository.org is a new way to engage citizen scientists in biodiversity research on the island of Cyprus. We provide a platform for 
+					people to learn about the amphibians and reptiles of Cyprus and to feed back their observations into scientific inquiry.
 							</p>
 						</div>
-					</div>
 				</div>
 			</section>
 			<!-- END About Section -->
@@ -126,92 +131,88 @@
 			
 			<!-- BEGIN FAQ Section -->
 			<section id="FAQ">
-				<div class="home-discover">
-					<div class="row-fluid">
-						<h2 class="text-info">FAQ</h2>
-						<div class="row-fluid"> <!-- Div container of the def list -->
-							<dl class="dl-horizontal text-overflow">
-								
-								<dt>How does HerpRepository.org work?</dt>
-								<dd align="justify">
-									With the help of HerpRepository.org, people can identify amphibians and reptiles that they observe, 
-									educating them about nature. They can then submit their distribution records to HerpRepository.org, 
-									providing resources for extending scientific knowledge.
-								</dd><br>
-								
-								<dt>What are distribution records?</dt>
-								<dd align="justify">
-									A distribution record is information about where and when a wild animal was observed in nature.
-								</dd><br>
-								
-								<dt>What can be learned from distribution records?</dt>
-								<dd align="justify"><i>Distribution records provide information about:</i>
-									<ul>
-										<li>Occurrence of animals in particular habitats, ecosystems, and biogeographical regions</li>
-										<li>Occurrence of animals in the vertical dimension</li>
-										<li>Annual activity of animals in relation to habitat and climate</li>
-										<li>Long term changes in the spatial and temporal distribution of animals</li>
-									</ul>
-								</dd><br>
-								
-								<dt>Why is this kind of information useful?</dt>
-								<dd align="justify">
-									<ul>
-										<li>Document how the distribution of animals changes as a result of environmental perturbations, 
-										such as climate change, habitat destruction</li>
-										<li>Characterize the ecological niche of a species, which can inform conservation measures</li>
-										<li>Identify new, unknown areas of inhabitance</li>
-										<li>Recognize species new to a region or country, sometimes in need of conservation measures</li>
-									</ul>
-								</dd><br>
-								
-								<dt>Why do we need support from the general public in collecting distribution records?</dt>
-								<dd align="justify">
-									<ul>
-										<li>Huge amounts of distribution data are needed to provide an informative picture, but resources 
-										to collect these data are limited.</li>
-										<li>Many people enjoy being in nature and are nature enthusiasts; they likely observe many interesting 
-										animals.</li>
-										<li>Nature enthusiasts collectively can provide many more data points than individual researchers could 
-										ever do!</li>
-									</ul>
-								</dd><br>
-							</dl>
-						</div>
-						<p align="right"><small><a href="#top">back to top</a></small></p>
-					</div> <!-- end row-fluid div -->
-				</div> <!-- end home-discovery -->
+				<div class="row-fluid">
+					<h2 class="text-info">FAQ</h2>
+					<div class="span12"> <!-- Div container of the def list -->
+						<dl class="dl-horizontal text-overflow">
+							
+							<dt>How does HerpRepository.org work?</dt>
+							<dd align="justify">
+								With the help of HerpRepository.org, people can identify amphibians and reptiles that they observe, 
+								educating them about nature. They can then submit their distribution records to HerpRepository.org, 
+								providing resources for extending scientific knowledge.
+							</dd><br>
+							
+							<dt>What are distribution records?</dt>
+							<dd align="justify">
+								A distribution record is information about where and when a wild animal was observed in nature.
+							</dd><br>
+							
+							<dt>What can be learned from distribution records?</dt>
+							<dd align="justify"><i>Distribution records provide information about:</i>
+								<ul>
+									<li>Occurrence of animals in particular habitats, ecosystems, and biogeographical regions</li>
+									<li>Occurrence of animals in the vertical dimension</li>
+									<li>Annual activity of animals in relation to habitat and climate</li>
+									<li>Long term changes in the spatial and temporal distribution of animals</li>
+								</ul>
+							</dd><br>
+							
+							<dt>Why is this kind of information useful?</dt>
+							<dd align="justify">
+								<ul>
+									<li>Document how the distribution of animals changes as a result of environmental perturbations, 
+									such as climate change, habitat destruction</li>
+									<li>Characterize the ecological niche of a species, which can inform conservation measures</li>
+									<li>Identify new, unknown areas of inhabitance</li>
+									<li>Recognize species new to a region or country, sometimes in need of conservation measures</li>
+								</ul>
+							</dd><br>
+							
+							<dt>Why do we need support from the general public in collecting distribution records?</dt>
+							<dd align="justify">
+								<ul>
+									<li>Huge amounts of distribution data are needed to provide an informative picture, but resources 
+									to collect these data are limited.</li>
+									<li>Many people enjoy being in nature and are nature enthusiasts; they likely observe many interesting 
+									animals.</li>
+									<li>Nature enthusiasts collectively can provide many more data points than individual researchers could 
+									ever do!</li>
+								</ul>
+							</dd><br>
+						</dl>
+					</div>
+					<p align="right"><small><a href="#top">back to top</a></small></p>
+				</div> <!-- end row-fluid div -->
 			</section>
 			<!-- END FAQ section -->
 			
 			<hr>
 			
 			<!-- BEGIN Research Data Aquisition Section -->
-			<div class="home-discover" id="Research">
+			<section id="Research">
 				<div class="row-fluid">
 					<h2 class="text-error">Interested in obtaining data?</h2>
-					<div class="row-fluid span10 offset1">
+					<div class="span10 offset1">
 						<p class="lead" align="justify">
-							Distribution data from herprepository.org are shared freely
-							 with anyone interested to do research on the amphibians and reptiles of Cyprus. To obtain data, please
-							 contact us and tell us about the project you would like to conduct and the data you would need.</p>
+							Distribution data from herprepository.org are shared
+							 with everyone interested to do research on the amphibians and reptiles of Cyprus. To obtain data, please
+							 contact us and tell us about your project and the type of data you would need.</p>
 					</div>
 				</div><p align="right"><small><a href="#top">back to top</a></small></p>
-			</div>
+			</section>
 			<!-- END Research Data Aquisition section -->
 			
 			<hr>
 			
 			<!-- BEGIN Contact -->
-			<div class="home-discover" id="Contact">
-				<div class="row-fluid">
-					<h2 class="text-error">Contact</h2>
-					<div class="row-fluid span10 offset1">
-						<p class="lead" align="justify">
-							Please email us under info at herprepository dot org</p>
-					</div>
-				</div><p align="right"><small><a href="#top">back to top</a></small></p>
-			</div>
+			<div class="row-fluid">
+				<h2 class="text-error">Contact</h2>
+				<div class="span10 offset1">
+					<p class="lead" align="justify">
+						Please email us under info at herprepository dot org</p>
+				</div>
+			</div><p align="right"><small><a href="#top">back to top</a></small></p>
 			<br>
 			<!-- END Contact -->
 			
@@ -241,6 +242,15 @@
 		<script src="js/bootstrap-typeahead.js"></script>
 		<script src="js/smoothScroll.js"></script>
 		
+		<script type="text/javascript">
+			boxes = $('.neat');
+			maxHeight = Math.max.apply(
+				Math, boxes.map(function(){
+					return $(this).height();
+				}).get());
+			boxes.height(maxHeight);
+		</script>
+
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
 			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

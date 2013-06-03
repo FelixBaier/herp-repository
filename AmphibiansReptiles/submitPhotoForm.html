@@ -79,7 +79,7 @@
 	   
 	    
 	    <!-- User Info Form -->
-	    <form class="form-horizontal" id="userInfoForm">
+	    <form class="form-horizontal" method="post" action="input2.php">
 	    <h3>Submit a Photo</h3>
 	    <p><strong> Upload your photo here:</strong></p>
 			<div class="fileupload fileupload-new offset2" data-provides="fileupload">
@@ -129,13 +129,13 @@
 					map = new google.maps.Map(document.getElementById('mapdiv'),opts);
 					
 					google.maps.event.addListener(map,'click',function(event) {
-						document.getElementById('inputLatitudeDec').value = event.latLng.lat()
-						document.getElementById('inputLongitudeDec').value = event.latLng.lng()
+						document.getElementById('inputLatitudeDec').value = Math.round(event.latLng.lat()*100000)/100000
+						document.getElementById('inputLongitudeDec').value = Math.round(event.latLng.lng()*100000)/100000
 					})
 				
 					google.maps.event.addListener(map,'mousemove',function(event) {
-						document.getElementById('latspan').innerHTML = event.latLng.lat()
-						document.getElementById('lngspan').innerHTML = event.latLng.lng()
+						document.getElementById('latspan').innerHTML = Math.round(event.latLng.lat()*100000)/100000
+						document.getElementById('lngspan').innerHTML = Math.round(event.latLng.lng()*100000)/100000
 					});
 					
 				}
@@ -144,7 +144,7 @@
 			<div class="control-group">
 				<label class="control-label" for="inputSightingDate">Date of Sighting</label>
 					<div class="controls">
-						<input id="inputSightingDate" name="inputSightingDate" class="span3" type="text" placeholder="select date..."></input>
+						<input id="inputSightingDate" name="inputSightingDate" class="span3" type="date" placeholder="select date..."></input>
 						<input id="inputTime" name="inputTime" type="time" placeholder="Time 24hr" data-mask="99:99">
 					</div>
 			</div>
@@ -226,7 +226,6 @@
 	    <script src="js/bootstrap-carousel.js"></script>
 	    <script src="js/bootstrap-typeahead.js"></script>
 	    <script src="js/bootstrap-datepicker.js"></script>
-	    <script src="js/smoothScroll.js"></script>
 	    <script type="text/jscript">
 	    		$('#inputSightingDate').datepicker({
 				format: 'dd-mm-yyyy'
