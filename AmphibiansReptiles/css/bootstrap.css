@@ -19,7 +19,7 @@ footer {
 	    padding-right: 150px;
 }
 
-
+/*!
 .home-discover {
     background: linear-gradient(#eeeeee, white) repeat scroll 0% 0% white;
         background-color: white;
@@ -40,6 +40,8 @@ footer {
         padding-right-ltr-source: physical;
         padding-right-rtl-source: physical;
 }
+*/
+
 
 /*!
  * Datepicker for Bootstrap
