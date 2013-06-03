@@ -116,12 +116,12 @@
 			
 			<!-- BEGIN About Section -->
 			<section id="About">
-				<div class="row">
+				<div class="row-fluid">
 					<h2 class="text-success">About</h2>
 					<div class="span10 offset1">
 						<p class="lead" align="justify">
-						HerpRepository.org is a new way to engage the interested public in biodiversity research. We provide a platform for 
-						people to learn about the amphibians and reptiles of Cyprus and feed back their knowledge into scientific inquiry.
+						HerpRepository.org is a new way to engage citizen scientists in biodiversity research on the island of Cyprus. We provide 
+						a platform to learn about the amphibians and reptiles of Cyprus. People can then feed back their observations into scientific inquiry.
 						</p>
 					</div>
 				</div>
@@ -250,6 +250,14 @@
 					return $(this).height();
 				}).get());
 			boxes.height(maxHeight);
+			window.onresize = function(event) {
+				boxes = $('.neat');
+				maxHeight = Math.max.apply(
+				Math, boxes.map(function(){
+					return $(this).height();
+				}).get());
+				boxes.height(maxHeight);
+			}
 		</script>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
