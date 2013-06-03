@@ -79,7 +79,7 @@
 	   
 	    
 	    <!-- User Info Form -->
-	    <form class="form-horizontal" id="userInfoForm">
+	    <form class="form-horizontal" method="post" action="input2.php">
 	    <h3>Submit a Photo</h3>
 	    <p><strong> Upload your photo here:</strong></p>
 			<div class="fileupload fileupload-new offset2" data-provides="fileupload">
@@ -144,7 +144,7 @@
 			<div class="control-group">
 				<label class="control-label" for="inputSightingDate">Date of Sighting</label>
 					<div class="controls">
-						<input id="inputSightingDate" name="inputSightingDate" class="span3" type="text" placeholder="select date..."></input>
+						<input id="inputSightingDate" name="inputSightingDate" class="span3" type="date" placeholder="select date..."></input>
 						<input id="inputTime" name="inputTime" type="time" placeholder="Time 24hr" data-mask="99:99">
 					</div>
 			</div>
