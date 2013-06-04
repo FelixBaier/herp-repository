@@ -78,19 +78,24 @@
 			<section id="columns">
 				<div class="row-fluid">
 					<div class="span4" id="column1">
-						<div class="span12 neat" style="overflow: auto">
+						<div class="span12 neat2" style="overflow: hidden">
 							<h2>Educate Yourself</h2><br><br>
+						</div>
+						<div class="span12 neat" style="overflow: auto">
 							<img src="img/magnifyingLens.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
-							<p align="justify">Learn about the amphibians and reptiles of Cyprus! No matter if you are a Cyprus 
-								resident or just visiting the island: this is where you will find your answers!</p>
+							<p align="justify">Learn about the amphibians and reptiles of Cyprus! Whether you're a Cyprus 
+								resident or just visiting the island, a trained scientist or avid enthusiast: this is where 
+								you will find your answers!</p>
 						</div>
 						<div class="span12">
 							<a class="btn btn-large btn-success span12" href="educate.html">Educate &raquo;</a>
 						</div>
 					</div>
 					<div class="span4" id="column2">
-						<div class="span12 neat" style="overflow: auto">
+						<div class="span12 neat2" style="overflow: hidden">
 							<h2>Submit A Photo<br><small><i>unknown species</i></small></h2>
+						</div>
+						<div class="span12 neat" style="overflow: auto">
 							<img src="img/picture.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
 							<p align="justify">If you photographed a frog, lizard, snake, or terrapin in nature, 
 								you can upload the photo here, together with information on where and when you took the photo. 
@@ -101,8 +106,10 @@
 						</div>
 					</div>
 					<div class="span4" id="column3">
+						<div class="span12 neat2" style="overflow: hidden">
+							<h2 style="overflow-style: auto">Report A Sighting<br><small><i>known species</i></small></h2>
+						</div>
 						<div class="span12 neat" style="overflow: auto">
-							<h2>Report A Sighting<br><small><i>known species</i></small></h2>
 							<img src="img/notebook.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
 							<p align="justify">If you identified a frog, lizard, snake, or terrapin that you observed in nature, 
 								you can submit your record here, together with information on where and when you made the observation.</p>
@@ -248,6 +255,15 @@
 		
 		<script type="text/javascript">
 			boxes = $('.neat');
+			maxHeight = Math.max.apply(
+				Math, boxes.map(function(){
+					return $(this).height();
+				}).get());
+			boxes.height(maxHeight);
+		</script>
+		
+		<script type="text/javascript">
+			boxes = $('.neat2');
 			maxHeight = Math.max.apply(
 				Math, boxes.map(function(){
 					return $(this).height();
