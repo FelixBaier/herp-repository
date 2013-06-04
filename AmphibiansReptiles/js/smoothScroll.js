@@ -1,6 +1,7 @@
 /**
  * @author Aidan Quinn
  */
+
 $(document).ready(function() {
   function filterPath(string) {
   return string
@@ -22,7 +23,7 @@ $(document).ready(function() {
         $(this).click(function(event) {
           event.preventDefault();
           $(scrollElem).animate({scrollTop: targetOffset}, 450, function() {
-            location.hash = targetOffset;
+            location.hash = target;
           });
         });
       }
