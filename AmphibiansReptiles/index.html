@@ -16,8 +16,8 @@
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	
 		<link rel="stylesheet" href="css/bootstrap.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/bootstrap-responsive.css">
-		
 	</head>
 
 
@@ -75,7 +75,7 @@
 			<section>
 				<div class="row-fluid">
 					<div class="span4" id="column1">
-						<div class="span12 neat">
+						<div class="span12 neat" style="overflow: auto">
 							<h2>Educate Yourself</h2><br><br>
 							<img src="img/magnifyingLens.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
 							<p align="justify">Learn about the amphibians and reptiles of Cyprus! No matter if you are a Cyprus 
@@ -86,7 +86,7 @@
 						</div>
 					</div>
 					<div class="span4" id="column2">
-						<div class="span12 neat">
+						<div class="span12 neat" style="overflow: auto">
 							<h2>Submit A Photo<br><small><i>unknown species</i></small></h2>
 							<img src="img/picture.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
 							<p align="justify">If you observed a frog, lizard, snake, or terrapin in nature, AND took a photo of your observation, 
@@ -98,7 +98,7 @@
 						</div>
 					</div>
 					<div class="span4" id="column3">
-						<div class="span12 neat">
+						<div class="span12 neat" style="overflow: auto">
 							<h2>Report A Sighting<br><small><i>known species</i></small></h2>
 							<img src="img/notebook.jpg" class="img-polaroid pull-right" width="140px" height="140px"/>
 							<p align="justify">If you observed a frog, lizard, snake, or terrapin in nature, AND were able to identify the species, 
@@ -132,7 +132,7 @@
 			
 			<!-- BEGIN FAQ Section -->
 			<section id="FAQ">
-				<div class="row-fluid">
+				<div class="row-semifluid">
 					<h2 class="text-info">FAQ</h2>
 					<div class="span12"> <!-- Div container of the def list -->
 						<dl class="dl-horizontal text-overflow">
@@ -250,14 +250,6 @@
 					return $(this).height();
 				}).get());
 			boxes.height(maxHeight);
-			window.onresize = function(event) {
-				boxes = $('.neat');
-				maxHeight = Math.max.apply(
-				Math, boxes.map(function(){
-					return $(this).height();
-				}).get());
-				boxes.height(maxHeight);
-			}
 		</script>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
