@@ -110,7 +110,9 @@ if(($result)
 	submission ID number in the email subject. </p> <br>
 	SUBMISSION ID NUMBER: " . $photoID . "<br> error code: " . $file_upload_error);
 } else{
-	echo("<br>Input data has failed, please contact admin@HerpRepoistory.org. Apologies.");
+	header("Refresh: 3; url=http://www.herprepository.org");
+	echo("<script>alert('Success! Your photo and data have been recorded. Please click okay below to be redirected back to 
+	the Herp Repository home page. Thank you for your contribution.');</script>");
 }
 
 ?>
