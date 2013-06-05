@@ -101,9 +101,8 @@ else
 }
 
 
-if($result)
-	&&($file_upload_error){
-	echo("<br><p>Oops! Data input has succeeded, however the image upload seems to have failed. \n
+if(($result)
+&&($file_upload_error)){ echo("<br><p>Oops! Data input has succeeded, however the image upload seems to have failed. \n
 	Please submit your image(s) via email to: admin@HerpRepository.org. Kindly include your 
 	submission ID number in the email subject. </p> <br>
 	SUBMISSION ID NUMBER: " . $id);
