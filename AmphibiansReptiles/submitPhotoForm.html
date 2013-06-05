@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!DOCTYPE html"-//W3C//DTD HTML 4.01 
+	Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd"> 
+	
+	<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+	<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+	<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+	<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
     <head>
         <meta charset="utf-8">
@@ -44,12 +46,6 @@
 	    <div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</a>
 					<a class="brand" href="theBook.html">The Book</a>
 					<div class="nav-collapse collapse">
 						<ul class="nav pull-right">
@@ -64,22 +60,22 @@
 			</div>
 		</div>
 	    <!-- End Navbar -->
-	    
-	    <br><br>
-	    <div class="container">
+	
+	    <div class="container"> <!-- Container for the entire body other than the navbar -->
+	    	
+	    	<br><br>
+	    	
+	    	<div class="row-semifluid">
 		    	<p class="well" align="justify">
 		    		Please provide us with as many details as possible about the animal you have photographed. If you
 		    		noticed any interesting behavior, please make note of this in the additional comments
 		    		section below. If you already know the species' name, please <a href="scientificNameForm.html">Report a Sighting</a>.
 		    	</p>
-	    </div>
+		    </div>
 	
-	
-	    <div class="container">
-	   
 	    
 	    <!-- User Info Form -->
-	    <form class="form-horizontal" method="post" action="input2.php">
+	    <form class="form-horizontal" method="post" action="input2.php" enctype="multipart/form-data">
 	    <h3>Submit a Photo</h3>
 	    <p><strong> Upload your photo here:</strong></p>
 			<div class="fileupload fileupload-new offset2" data-provides="fileupload">
