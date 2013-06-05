@@ -19,8 +19,11 @@ $email			= $_POST['inputEmail'];
 $phone			= $_POST['inputPhone'];
 $correspondence = $_POST['inputCorrespondence'];
 
-$sql 			= "SELECT ID FROM data_input ORDER BY ID DESC LIMIT 1";
-$id				= mysql_query($sql);
+// Get the ID from the database for use in PHP as a variable:
+$sql 			= "SELECT ID FROM `data_input` ORDER BY ID DESC LIMIT 1";
+$id 			= mysql_result(mysql_query($sql),0);
+$photoID		= $id + 1;
+
 
 //inserting data order
 $order =	"INSERT INTO data_input (
@@ -36,29 +39,28 @@ $order =	"INSERT INTO data_input (
 $result = mysql_query($order);	//order executes
 
 
-
 // Upload and save Image:
 
 // First security measure: test extension
 $allowedExts	= array("gif", "jpeg", "jpg", "png");
-$extension		= end(explode(".", $_FILES["file"]["name"]));
+$extension		= end(explode(".", $_FILES["inputPhoto"]["name"]));
 $today			= date("Ymd");
-$ext 			= pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+$ext 			= pathinfo($_FILES['inputPhoto']['name'], PATHINFO_EXTENSION);
 
-if ((($_FILES["file"]["type"] == "image/gif")
-|| ($_FILES["file"]["type"] == "image/jpeg")
-|| ($_FILES["file"]["type"] == "image/jpg")
-|| ($_FILES["file"]["type"] == "image/pjpeg")
-|| ($_FILES["file"]["type"] == "image/x-png")
-|| ($_FILES["file"]["type"] == "image/png"))
-&& ($_FILES["file"]["size"] < 20000) // Seccond security meausre - size limit: 20 Mb
+if ((($_FILES["inputPhoto"]["type"] == "image/gif")
+|| ($_FILES["inputPhoto"]["type"] == "image/jpeg")
+|| ($_FILES["inputPhoto"]["type"] == "image/jpg")
+|| ($_FILES["inputPhoto"]["type"] == "image/pjpeg")
+|| ($_FILES["inputPhoto"]["type"] == "image/x-png")
+|| ($_FILES["inputPhoto"]["type"] == "image/png"))
+&& ($_FILES["fiinputPhotole"]["size"] < 25000000) // Seccond security meausre - size limit: 25 Mb
 && in_array($extension, $allowedExts))
 	{
 	
 	// Check if there is an error with the file:
-	if ($_FILES["file"]["error"] > 0)
+	if ($_FILES["inputPhoto"]["error"] > 0)
 		{
-			$file_upload_error = "Return Code: " . $_FILES["file"]["error"] . "<br>";
+			$file_upload_error = "Return Code: " . $_FILES["inputPhoto"]["error"] . "<br>";
 		}
 	
 	// Upload the file:
@@ -72,16 +74,16 @@ if ((($_FILES["file"]["type"] == "image/gif")
 		
 		// Set the file path and name to upload/*date*-*id*."extension"
 		// Check if the file name already exists in the directory of the server:
-		if (file_exists("upload/" . $today . "-" . $id ."." . $ext))
+		if (file_exists("upload/" . $today . "-" . $photoID ."." . $ext))
 		{
-			$file_upload_error = $_FILES["file"]["name"] . " already exists. ";
+			$file_upload_error = $_FILES["inputPhoto"]["name"] . " already exists. ";
 		}
 		
 		// Move files into place:
 		else
 		{
-			move_uploaded_file($_FILES["file"]["tmp_name"],
-			"upload/" . $today . "-" . $id ."." . $ext);
+			move_uploaded_file($_FILES["inputPhoto"]["tmp_name"],
+			"upload/" . $today . "-" . $photoID ."." . $ext);
 			$file_success_message = 
 			"
 			<h2> Success! The image and data were accepted and we will let you know how it goes. </h2>
@@ -93,7 +95,8 @@ if ((($_FILES["file"]["type"] == "image/gif")
 		}
 	}
 }
-	
+
+
 // Inform the user that the file type was unacceptable:
 else
 {
@@ -105,7 +108,7 @@ if(($result)
 &&($file_upload_error)){ echo("<br><p>Oops! Data input has succeeded, however the image upload seems to have failed. \n
 	Please submit your image(s) via email to: admin@HerpRepository.org. Kindly include your 
 	submission ID number in the email subject. </p> <br>
-	SUBMISSION ID NUMBER: " . $id);
+	SUBMISSION ID NUMBER: " . $photoID . "<br> error code: " . $file_upload_error);
 } else{
 	echo("<br>Input data has failed, please contact admin@HerpRepoistory.org. Apologies.");
 }
