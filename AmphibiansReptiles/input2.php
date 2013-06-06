@@ -110,15 +110,25 @@ if(($result)
 	submission ID number in the email subject. </p> <br>
 	SUBMISSION ID NUMBER: " . $photoID . "<br> error code: " . $file_upload_error);
 } else{
-	header("Refresh: 3; url=http://www.herprepository.org");
-	echo("<script>alert('Success! Your photo and data have been recorded. Please click okay below to be redirected back to 
-	the Herp Repository home page. Thank you for your contribution.');</script>");
+	// header("Refresh: 3; url=http://www.herprepository.org");
+	echo "<link rel='stylesheet' type='text/css' href='css/bootstrap.css' />";
+	echo "<link rel='stylesheet' type='text/css' href='css/bootstrap-responsive.css' />";
+	echo "<div class='container'>
+		<div class='row'>
+			<h2 class='text-success'>Success!</h2>
+				<div class='span11 offset1'>
+					<p class='lead' align='justify'>
+						Thank you for your submission to the Herp Repository of Cyprus. You should feel good knowing that you've 
+						contributed meaningful data to our research database. Please choose from one of the options below:
+					</p>
+				</div>
+				<div class='row span12'>
+					<a class='btn btn-large btn-primary span2 offset1' href='submitPhotoForm.html'>Submit Photo &raquo;</a>
+					<a class='btn btn-large btn-danger span2' href='scientificNameForm.html'>Report Sighting &raquo;</a>
+					<a class='btn-large btn-success span2' href='educate.html'>Learn &raquo;</a>
+					<a class='btn-large btn-info span2' href='index.html'>Home &raquo;</a>
+				</div>
+			</div>
+		</div>";
 }
-
 ?>
-
-
-
-
-
-
