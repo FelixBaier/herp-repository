@@ -88,8 +88,8 @@ if ((($_FILES["inputPhoto"]["type"] == "image/gif")
 			"
 			<h2> Success! The image and data were accepted and we will let you know how it goes. </h2>
 			<p> Thank you for your contribution. You may now: 
-			<br> <a href=submitPhotoForm.html> Upload a photo </a>
-			<a href=submitPhotoForm.html> Report a sighing using scientific name </a>
+			<br> <a href=submitPhotoForm.html> Upload a Photo </a>
+			<a href=submitPhotoForm.html> Report a Sighting </a>
 			<br> <a href=index.html> Home </a> </b>
 			";
 		}
@@ -106,7 +106,7 @@ else
 
 if(($result)
 &&($file_upload_error)){ echo("<br><p>Oops! Data input has succeeded, however the image upload seems to have failed. \n
-	Please submit your image(s) via email to: admin@HerpRepository.org. Kindly include your 
+	Please submit your image(s) via email to: info@HerpRepository.org. Kindly include your 
 	submission ID number in the email subject. </p> <br>
 	SUBMISSION ID NUMBER: " . $photoID . "<br> error code: " . $file_upload_error);
 } else{
@@ -118,8 +118,7 @@ if(($result)
 			<h2 class='text-success'>Success!</h2>
 				<div class='span11 offset1'>
 					<p class='lead' align='justify'>
-						Thank you for your submission to the Herp Repository of Cyprus. You should feel good knowing that you've 
-						contributed meaningful data to our research database. Please choose from one of the options below:
+						Thank you for your submission to the Herp Repository of Cyprus. Please choose from one of the options below:
 					</p>
 				</div>
 				<div class='row span12'>
