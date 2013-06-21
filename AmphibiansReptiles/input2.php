@@ -8,8 +8,8 @@ mysql_select_db("d0169c2f");
 $species		= $_POST['inputSpecies'];
 $GPSLat 		= $_POST['inputLatitudeDec'];
 $GPSLon 		= $_POST['inputLongitudeDec'];
-$sightingDate	= $_POST['inputSightingDate'];
-$sightingTime	= $_POST['inputTime'];
+$sightingDate		= $_POST['inputSightingDate'];
+$sightingTime		= $_POST['inputTime'];
 $certainty		= $_POST['inputCertainty'];
 //$image		= $_POST['inputPhoto'];
 $comments		= $_POST['inputComments'];
@@ -17,7 +17,7 @@ $firstName		= $_POST['inputFirstName'];
 $lastName		= $_POST['inputLastName'];
 $email			= $_POST['inputEmail'];
 $phone			= $_POST['inputPhone'];
-$correspondence = $_POST['inputCorrespondence'];
+$correspondence 	= $_POST['inputCorrespondence'];
 
 
 $GPSLatDeg		= $_POST['inputLatitudeDeg'];
