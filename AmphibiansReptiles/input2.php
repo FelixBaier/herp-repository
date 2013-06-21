@@ -19,6 +19,26 @@ $email			= $_POST['inputEmail'];
 $phone			= $_POST['inputPhone'];
 $correspondence = $_POST['inputCorrespondence'];
 
+
+$GPSLatDeg		= $_POST['inputLatitudeDeg'];
+$GPSLatMin		= $_POST['inputLatitudeMin'];
+$GPSLatSec		= $_POST['inputLatitudeSec'];
+
+$GPSLonDeg 		= $_POST['inputLongitudeDeg'];
+$GPSLonMin 		= $_POST['inputLongitudeMin'];
+$GPSLonSec 		= $_POST['inputLongitudeSec'];
+
+// Check if the user input Decimal, if not try to calculate based on Deg/Min/Sec fields
+if ((is_null($GPSLat))
+|| ($GPSLat == 0.00000)){
+	$GPSLat = round(($GPSLatDeg + ($GPSLatMin / 60) + ($GPSLatSec / 3600)), 5);
+};
+
+if ((is_null($GPSLon))
+|| ($GPSLon == 0.00000)){
+	$GPSLon = round(($GPSLonDeg + ($GPSLonMin / 60) + ($GPSLonSec / 3600)), 5);
+};
+
 // Get the ID from the database for use in PHP as a variable:
 $sql 			= "SELECT ID FROM `data_input` ORDER BY ID DESC LIMIT 1";
 $id 			= mysql_result(mysql_query($sql),0);
@@ -53,7 +73,7 @@ if ((($_FILES["inputPhoto"]["type"] == "image/gif")
 || ($_FILES["inputPhoto"]["type"] == "image/pjpeg")
 || ($_FILES["inputPhoto"]["type"] == "image/x-png")
 || ($_FILES["inputPhoto"]["type"] == "image/png"))
-&& ($_FILES["fiinputPhotole"]["size"] < 25000000) // Seccond security meausre - size limit: 25 Mb
+&& ($_FILES["fiinputPhotole"]["size"] < 15000000) // Seccond security meausre - size limit: 15 Mb
 && in_array($extension, $allowedExts))
 	{
 	

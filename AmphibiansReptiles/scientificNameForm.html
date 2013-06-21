@@ -140,25 +140,37 @@
 			
 			<div class="control-group">
 				<label class="control-label" for="inputLatitudeDec">GPS Coordinates</label>
-					<div class="controls">
-						<input type="text" name="inputLatitudeDec" id="inputLatitudeDec" placeholder="Latitude (N)">
-						<input type="text" name="inputLongitudeDec" id="inputLongitudeDec" placeholder="Longitude (E)">
+				<div class="controls">
+					<div class="well">
+						<div class="controls-row">
+							<p><i class="icon-globe"></i> Degrees in decimal <em class="pull-right"><small> 35.15135 N, 33.07983 E</small></em></p>
+							<input type="text" name="inputLatitudeDec" id="inputLatitudeDec" placeholder="Latitude (N)">
+							<input type="text" name="inputLongitudeDec" id="inputLongitudeDec" placeholder="Longitude (E)">
+						</div>
 					</div>
-			</div>
-			
-						<div class="container">
-				<div class="span8 offset2">
-					<div class="alert alert-success">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<p>Click on the map below if you do not know the GPS Coordinates: </p>
+					<div class="well">
+						<div class="controls-row">
+							<p><i class="icon-globe"></i> Degrees Minutes Seccods<em class="pull-right"><small>e.g. 35&#176;14'44.23" N, 33&#176;38'04.70" E</small></em></p>
+							<p>Latitude:</p>
+							<input class="input-mini" type="number" name="inputLatitudeDeg" id="inputLatitudeDeg" placeholder="Deg Lat">
+							<input class="input-mini" type="number" name="inputLatitudeMin" id="inputLatitudeMin" placeholder="Min Lat">
+							<input class="input-mini" type="number" name="inputLatitudeSec" id="inputLatitudeSec" placeholder="Sec Lat">
+							<br><br>
+							<p>Longitude:</p>
+							<input class="input-mini" type="number" name="inputLongitudeDeg" id="inputLongitudeDeg" placeholder="Deg Lon">
+							<input class="input-mini" type="number" name="inputLongitudeMin" id="inputLongitudeMin" placeholder="Min Lon">
+							<input class="input-mini" type="number" name="inputLongitudeSec" id="inputLongitudeSec" placeholder="Sec Lon">
+						</div>
 					</div>
-				</div>
-				<div class="map_canvas span8 offset2">
-					<div id="mapdiv" style="width:100%; height:300px;"></div>
-				</div>
-				<div class="span8 offset2">
-					<p class="muted"><b>Latitude:</b> <span id="latspan"></span>    <b>Longitude: </b> <span id="lngspan"></p>
-				<br>
+					<div class="controls-row">
+						<br>
+						<p class="text-error"> <i class="icon-eye-open"></i> If you don't know the GPS coordinates, click on the map below: </p>
+						<div class="map_canvas">
+							<div id="mapdiv" style="width:100%; height:300px;"></div>
+						</div>
+						<p class="muted"><b>Latitude:</b> <span id="latspan"></span>    <b>Longitude: </b> <span id="lngspan"></p>
+						<br>
+					</div>
 				</div>
 			</div>
 
@@ -168,7 +180,7 @@
 				{
 					var opts = {'center': new google.maps.LatLng(35.09, 33.62091), 'zoom':8, 'mapTypeId': google.maps.MapTypeId.TERRAIN }
 					map = new google.maps.Map(document.getElementById('mapdiv'),opts);
-					
+
 					google.maps.event.addListener(map,'click',function(event) {
 						document.getElementById('inputLatitudeDec').value = Math.round(event.latLng.lat()*100000)/100000
 						document.getElementById('inputLongitudeDec').value = Math.round(event.latLng.lng()*100000)/100000
@@ -181,8 +193,8 @@
 					
 				}
 			</script>
-			
-			
+
+
 			<div class="control-group">
 				<label class="control-label" for="inputSightingDate">Date of Sighting</label>
 					<div class="controls">
@@ -193,7 +205,8 @@
 			
 			<div class="control-group">
 				<label class="control-label" for="inputPhoto">Photograph</label>
-					<div class="fileupload fileupload-new offset2" data-provides="fileupload">
+				<div class="controls">
+					<div class="fileupload fileupload-new" data-provides="fileupload">
 					  <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
 					  	<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image"/>
 					  </div>
@@ -205,6 +218,7 @@
 					    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
 					  </div>
 					</div>
+				</div>
 			</div>
 			
 			<div class="control-group">
