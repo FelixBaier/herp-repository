@@ -125,10 +125,34 @@ else
 
 
 if(($result)
-&&($file_upload_error)){ echo("<br><p>Oops! Data input has succeeded, however the image upload seems to have failed. \n
-	Please submit your image(s) via email to: info@HerpRepository.org. Kindly include your 
-	submission ID number in the email subject. </p> <br>
-	SUBMISSION ID NUMBER: " . $photoID . "<br> error code: " . $file_upload_error);
+&&($file_upload_error)){
+	echo "<link rel='stylesheet' type='text/css' href='css/bootstrap.css' />";
+	echo "<link rel='stylesheet' type='text/css' href='css/bootstrap-responsive.css' />";
+	echo "<div class='container'>
+		<div class='row'>
+			<h2 class='text-success'>Data input has succeeded!</h2>
+				<div class='span11 offset1'>
+					<p class='lead' align='justify'>
+						Data input has succeeded, however the image upload seems to have failed.
+						Please submit your image(s) via email to: info@HerpRepository.org. Kindly include your 
+						submission ID number in the email subject. <br>
+						SUBMISSION ID NUMBER: " . $photoID . "<br> error code: " . $file_upload_error).
+						"<br>
+						Thank you for your submission to the Herp Repository of Cyprus. Please 
+						choose from one of the options below:
+					</p>
+				</div>
+				<div class='row span12'>
+					<a class='btn btn-large btn-primary span2 offset1' href='submitPhotoForm.html'>Submit Photo &raquo;</a>
+					<a class='btn btn-large btn-danger span2' href='scientificNameForm.html'>Report Sighting &raquo;</a>
+					<a class='btn-large btn-success span2' href='educate.html'>Learn &raquo;</a>
+					<a class='btn-large btn-info span2' href='index.html'>Home &raquo;</a>
+				</div>
+			</div>
+		</div>";
+	}
+
+
 } else{
 	// header("Refresh: 3; url=http://www.herprepository.org");
 	echo "<link rel='stylesheet' type='text/css' href='css/bootstrap.css' />";
