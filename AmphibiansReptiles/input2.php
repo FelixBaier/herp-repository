@@ -5,6 +5,7 @@ mysql_connect("localhost","d0169c2f","abutvS3f3yezBTsM");//database connection
 mysql_select_db("d0169c2f");
 
 // Define using data from form
+$channel		= $_POST['inputchannel'];
 $species		= $_POST['inputSpecies'];
 $GPSLat 		= $_POST['inputLatitudeDec'];
 $GPSLon 		= $_POST['inputLongitudeDec'];
@@ -47,11 +48,11 @@ $photoID		= $id + 1;
 
 //inserting data order
 $order =	"INSERT INTO data_input (
-			species, GPSLat, GPSLon, sightingDate, sightingTime, 
+			channel, species, GPSLat, GPSLon, sightingDate, sightingTime, 
 			certainty, comments, firstName, lastName, 
 			email, phone, correspondence)
 			VALUES (
-			'$species', '$GPSLat', '$GPSLon', '$sightingDate',
+			'$channel', '$species', '$GPSLat', '$GPSLon', '$sightingDate',
 			'$sightingTime', '$certainty', '$comments',
 			'$firstName', '$lastName', '$email', '$phone', '$correspondence')";
 
@@ -104,14 +105,6 @@ if ((($_FILES["inputPhoto"]["type"] == "image/gif")
 		{
 			move_uploaded_file($_FILES["inputPhoto"]["tmp_name"],
 			"upload/" . $today . "-" . $photoID ."." . $ext);
-			$file_success_message = 
-			"
-			<h2> Success! The image and data were accepted and we will let you know how it goes. </h2>
-			<p> Thank you for your contribution. You may now: 
-			<br> <a href=submitPhotoForm.html> Upload a Photo </a>
-			<a href=submitPhotoForm.html> Report a Sighting </a>
-			<br> <a href=index.html> Home </a> </b>
-			";
 		}
 	}
 }
@@ -124,7 +117,8 @@ else
 }
 
 
-if(($result)
+if(($channel == P)
+&&($result)
 &&($file_upload_error)){
 	echo "<link rel='stylesheet' type='text/css' href='css/bootstrap.css' />";
 	echo "<link rel='stylesheet' type='text/css' href='css/bootstrap-responsive.css' />";
@@ -136,8 +130,7 @@ if(($result)
 						Data input has succeeded, however the image upload seems to have failed.
 						Please submit your image(s) via email to: info@HerpRepository.org. Kindly include your 
 						submission ID number in the email subject. <br>
-						SUBMISSION ID NUMBER: " . $photoID . "<br> error code: " . $file_upload_error).
-						"<br>
+						SUBMISSION ID NUMBER: " . $photoID . "<br> error code: " . $file_upload_error . "<br>
 						Thank you for your submission to the Herp Repository of Cyprus. Please 
 						choose from one of the options below:
 					</p>
@@ -153,7 +146,7 @@ if(($result)
 	}
 
 
-} else{
+else{
 	// header("Refresh: 3; url=http://www.herprepository.org");
 	echo "<link rel='stylesheet' type='text/css' href='css/bootstrap.css' />";
 	echo "<link rel='stylesheet' type='text/css' href='css/bootstrap-responsive.css' />";
