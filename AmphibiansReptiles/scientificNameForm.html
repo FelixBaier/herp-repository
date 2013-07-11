@@ -169,13 +169,25 @@
 						</div>
 					</div>
 					<div class="controls-row">
-						<br>
-						<p class="text-error"> <i class="icon-eye-open"></i> If you don't know the GPS coordinates, click on the map below: </p>
-						<div class="map_canvas">
-							<div id="mapdiv" style="width:100%; height:300px;"></div>
+						<div class="accordion" id="accordion2">
+  							<div class="accordion-group">
+    							<div class="accordion-heading">
+      								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        								If you don't know the GPS coordinates, click here! 
+     								</a>
+    							</div>
+    							<div id="collapseOne" class="accordion-body collapse">
+      								<div class="accordion-inner">
+        								<p>(1) Locate the site where you made your observation by zooming in as closely as possible.<br> 
+        									(2) Click to transfer coordinates into the field above!</p>
+        								<div class="map_canvas">
+											<div id="mapdiv" style="width:100%; height:300px;"></div>
+										</div>
+										<p class="muted"><b>Latitude:</b> <span id="latspan"></span>    <b>Longitude: </b> <span id="lngspan"></p>
+      								</div>
+    							</div>
+  							</div>
 						</div>
-						<p class="muted"><b>Latitude:</b> <span id="latspan"></span>    <b>Longitude: </b> <span id="lngspan"></p>
-						<br>
 					</div>
 				</div>
 			</div>
