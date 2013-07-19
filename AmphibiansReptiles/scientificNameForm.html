@@ -72,15 +72,17 @@
 	    	<div class="row-semifluid">
 	    		<br><br>
 		    	<p align="justify">
-		    		&#9658; Please provide us with as many information as possible about the specimen you have identified.<br>
+		    		&#9658; Please provide us with as much information as possible about your observation.<br>
+		    		&#9658; If you took a photo, please submit it as well, even if you are 100% positive about the species identification.<br>
 		    		&#9658; Required fields are indicated with an asterisk (*).<br>
+		    		&#9658; To facilitate multiple submissions, many fields remember values from the previous submission.<br><br>
 		    		&#9658; If you don't know the species but took a photo, please <a href="submitPhotoForm.html">Submit a Photo</a>!
 		    	</p>
 		    </div>
 		    
 		    <hr>	
 	    <!-- User Info Form -->
-	    <form class="form-horizontal" method="post" action="input2.php" enctype="multipart/form-data" onSubmit="rememberinput('inputFirstName', 'inputLastName','inputEmail')">
+	    <form class="form-horizontal" method="post" action="input2.php" enctype="multipart/form-data" onSubmit="rememberinput('inputFirstName','inputLastName','inputEmail','inputPhone','inputLatitudeDec','inputLongitudeDec','inputLatitudeDeg','inputLatitudeMin','inputLatitudeSec','inputLongitudeDeg','inputLongitudeMin','inputLongitudeSec','inputSightingDate')">
 		
 		<input type="hidden" name="inputchannel" value="R">
 	    
@@ -259,7 +261,7 @@
 				<div class="control-group">
 					<label class="control-label" for="inputEmail">Email Address</label>
 						<div class="controls">
-							<input type="text" name="inputEmail" id="inputEmail" placeholder="Email" required>
+							<input type="email" name="inputEmail" id="inputEmail" placeholder="Email" required>
 							<label class="checkbox">
 								<input type="checkbox" name="inputCorrespondence" value="1">Sign up for correspondence
 							</label>
@@ -336,7 +338,7 @@
 		for (var i=0; i<cookienamevalue.length; i++){
 		var cookiename=cookienamevalue[i].split("#")[0]
 		var cookievalue=cookienamevalue[i].split("#")[1]
-		if (document.getElementById(cookiename)!=null && document.getElementById(cookiename).type=="text") //if this text field has a stored value
+		if (document.getElementById(cookiename)!=null && (document.getElementById(cookiename).type=="tel" || document.getElementById(cookiename).type=="date" || document.getElementById(cookiename).type=="number" || document.getElementById(cookiename).type=="text" || document.getElementById(cookiename).type=="email")) //if this text field has a stored value
 		document.getElementById(cookiename).value=decodeURI(cookievalue)
 		}
 		}
@@ -344,7 +346,7 @@
 		var rememberinput=function(){
 		var rememberit=""
 		for (var i=0; i<arguments.length; i++){
-		if (document.getElementById(arguments[i]).type=="text" && document.getElementById(arguments[i]).value!="") //if this is a form text INPUT and not empty
+		if ((document.getElementById(arguments[i]).type=="date" || document.getElementById(arguments[i]).type=="number" || document.getElementById(arguments[i]).type=="tel" || document.getElementById(arguments[i]).type=="text"  || document.getElementById(arguments[i]).type=="email") && document.getElementById(arguments[i]).value!="") //if this is a form text INPUT and not empty
 		rememberit+=arguments[i]+"#"+encodeURI(document.getElementById(arguments[i]).value)+"##"
 		}
 		rememberinput.setCookie(dyncookiename, rememberit, remembervalues_days)
