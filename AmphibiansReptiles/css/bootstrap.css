@@ -1926,6 +1926,11 @@ a:hover {
           border-radius: 6px;
 }
 
+.img-polaroid1 {
+  padding: 4px;
+  background-color: #eeeeee;
+}
+
 .img-polaroid {
   padding: 4px;
   background-color: #fff;
