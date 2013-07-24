@@ -84,7 +84,8 @@
 		    
 		    <hr>	
 	    <!-- User Info Form -->
-	    <form class="form-horizontal" method="post" action="input2.php" enctype="multipart/form-data" onSubmit="rememberinput('inputFirstName','inputLastName','inputEmail','inputPhone','inputLatitudeDec','inputLongitudeDec','inputLatitudeDeg','inputLatitudeMin','inputLatitudeSec','inputLongitudeDeg','inputLongitudeMin','inputLongitudeSec','inputSightingDate')">
+	    <form class="form-horizontal" method="post" action="input2.php" name="sciNameForm"
+	    enctype="multipart/form-data"  onSubmit="return !!(formChecker() & rememberinput('inputFirstName','inputLastName','inputEmail','inputPhone','inputLatitudeDec','inputLongitudeDec','inputLatitudeDeg','inputLatitudeMin','inputLatitudeSec','inputLongitudeDeg','inputLongitudeMin','inputLongitudeSec','inputSightingDate'));">
 		
 		<input type="hidden" name="inputchannel" value="R">
 	    
@@ -95,7 +96,7 @@
 			<div class="control-group">
 				<label class="control-label" for="inputSpecies">Species Sighted (*)</label>
 					<div class="controls">
-						<select class="span6" name="inputSpecies" id="inputSpecies">
+						<select class="span6" name="inputSpecies" id="inputSpecies" required>
 							<option value="" disabled selected>Select species...</option>
 							<option value="" disabled>--Frogs--</option>
 								<option value="01">(1) Bufo viridis sensu lato (Green Toad)</option>
@@ -220,7 +221,7 @@
 			<div class="control-group">
 				<label class="control-label" for="inputSightingDate">Date of Sighting (*)</label>
 					<div class="controls">
-						<input id="inputSightingDate" name="inputSightingDate" class="span3" type="date" placeholder="select date..."></input>
+						<input id="inputSightingDate" name="inputSightingDate" class="span3" type="date" placeholder="select date..." required></input>
 						<input id="inputTime" name="inputTime" type="time" placeholder="Time (24hr)" data-mask="99:99">
 					</div>
 			</div>
@@ -256,7 +257,7 @@
 				<div class="control-group">
 					<label class="control-label" for="inputFirstName">Name (*)</label>
 						<div class="controls">
-							<input type="text" name="inputFirstName" id="inputFirstName" placeholder="First">
+							<input type="text" name="inputFirstName" id="inputFirstName" placeholder="First" required>
 							<input type="text" name="inputLastName" id="inputLastName" placeholder="Last">
 						</div>
 				</div>
@@ -321,9 +322,55 @@
 				format: 'yyyy-mm-dd'
 			});
 		</script>
+		
 		<script type="text/javascript">
-			
+		/***********************************************
+		* This is the form checker: It requires        *
+		* the requisite variables to be valid before   *
+		* allowing the user to submit the form         *
+		***********************************************/
+			function formChecker()
+			{
+				if(sciNameForm.inputSpecies.value == '' || sciNameForm.inputSpecies.value == null) {
+			      alert("The species is required, please check the form and try again.");
+			      sciNameForm.inputSpecies.focus();
+			      return false;
+			    }
+			    if(sciNameForm.inputLatitudeDec.value == '' || sciNameForm.inputLatitudeDec.value == null
+			    && sciNameForm.inputLatitudeDeg.value == '' || sciNameForm.inputLatitudeDeg.value == null) {
+			      alert("The GPS coordinates are required (either decimal or degree). If you do not know them you may zoom in then left-click on the map to automatically populate these fields.");
+			      sciNameForm.inputLatitudeDec.focus();
+			      return false;
+			    }
+			    if(sciNameForm.inputLongitudeDec.value == '' || sciNameForm.inputLongitudeDec.value == null
+			    && sciNameForm.inputLongitudeDeg.value == '' || sciNameForm.inputLongitudeDeg.value == null) {
+			      alert("The GPS coordinates are required (either decimal or degree). If you do not know them you may zoom in then left-click on the map to automatically populate these fields.");
+			      sciNameForm.inputLongitudeDec.focus();
+			      return false;
+			    }
+			    if(sciNameForm.inputSightingDate.value == '' || sciNameForm.inputSightingDate.value == null) {
+			      alert("The sighting date is required, please check the form and try again.");
+			      sciNameForm.inputSightingDate.focus();
+			      return false;
+			    }
+				if(sciNameForm.inputFirstName.value == '' || sciNameForm.inputFirstName.value == null
+				&& sciNameForm.inputLastName.value == '' || sciNameForm.inputLastName.value == null) {
+			      alert("Please submit your name, it helps us keep track of the total number of users. Don't worry, we wont share your personal information with anyone.");
+			      sciNameForm.inputFirstName.focus();
+			      return false;
+			    }
+				if(sciNameForm.inputEmail.value == '' || sciNameForm.inputEmail.value == null) {
+			      alert("A valid email address is required, please check the form and try again. Don't worry, we wont share your personal information with anyone.");
+			      sciNameForm.inputEmail.focus();
+			      return false;
+			    }
+			 	else
+			 	{
+			 	return true
+			 	}
+			 }
 	    </script>
+		
 		<script type="text/javascript">
 
 		/***********************************************
