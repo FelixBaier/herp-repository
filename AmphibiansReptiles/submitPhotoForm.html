@@ -78,7 +78,10 @@
 	
 	    
 	    <!-- User Info Form -->
-	    <form class="form-horizontal" method="post" action="input2.php" enctype="multipart/form-data">
+	    <form class="form-horizontal" method="post" action="input2.php" enctype="multipart/form-data" name="photoForm" id="photoForm" 
+	    onsubmit="return(rememberinput('inputFirstName','inputLastName', 'inputEmail','inputPhone','inputLatitudeDec', 
+	    'inputLongitudeDec','inputLatitudeDeg','inputLatitudeMin', 'inputLatitudeSec','inputLongitudeDeg','inputLongitudeMin',
+	    'inputLongitudeSec','inputSightingDate') || formChecker());">
 	    
 	    <input type="hidden" name="inputchannel" value="P">
 	    
@@ -252,6 +255,8 @@
 				format: 'yyyy-mm-dd'
 			});
 		</script>
+		<script src="js/formChecker.js"></script>
+		<script src="js/rememberinput.js"></script>	
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
