@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5 
 	Transitional//EN"
 	"http://www.w3.org/TR/html4/loose.dtd"> 
 	
@@ -78,10 +78,10 @@
 	
 	    
 	    <!-- User Info Form -->
-	    <form class="form-horizontal" method="post" action="input2.php" enctype="multipart/form-data" name="photoForm" id="photoForm" 
-	    onsubmit="return(rememberinput('inputFirstName','inputLastName', 'inputEmail','inputPhone','inputLatitudeDec', 
+	    <form id="photoForm" class="form-horizontal" method="post" action="input2.php" enctype="multipart/form-data" 
+	    onsubmit="return(rememberinput('inputFirstName','inputLastName', 'inputEmail','inputPhone','inputLatitudeDec',
 	    'inputLongitudeDec','inputLatitudeDeg','inputLatitudeMin', 'inputLatitudeSec','inputLongitudeDeg','inputLongitudeMin',
-	    'inputLongitudeSec','inputSightingDate') || formChecker());">
+	    'inputLongitudeSec','inputSightingDate'));">
 	    
 	    <input type="hidden" name="inputchannel" value="P">
 	    
@@ -181,11 +181,15 @@
 					</div>
 			</div>
 			<hr>
-			<h3>Contact Info</h3>
+			<fieldset>
+			<legend>Contact Info (*)</legend>
 				<div class="control-group">
-					<label class="control-label" for="inputFirstName">Name (*)</label>
+					<label class="control-label" for="inputFirstName">First Name </label>
 						<div class="controls">
 							<input type="text" name="inputFirstName" id="inputFirstName" placeholder="First">
+						</div>
+					<label class="control-label" for="inputLastName">Last Name </label>
+						<div class="controls">
 							<input type="text" name="inputLastName" id="inputLastName" placeholder="Last">
 						</div>
 				</div>
@@ -204,7 +208,7 @@
 							<input type="tel" name="inputPhone" id="inputPhone" placeholder="Phone">
 						</div>
 				</div>
-				
+				</fieldset>
 				<hr>
 				
 				<div class="form-actions">
@@ -215,6 +219,7 @@
 			</form>
 		<!-- /User Info Form -->
 	    
+	   
 		<div class="row">
 	    	<div id="myAlert" class="alert alert-success span9 offset1 hide" data-alert="alert" style="position:fixed;">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -232,9 +237,7 @@
 	    <!-- Le javascript
 	    ================================================== -->
 	    <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
-        <script src="js/formListener.js"></script>
         <script src="js/bootstrap-fileupload.js"></script>
         <script src="js/bootstrap-inputmask.js"></script>
 	    <script src="js/bootstrap-transition.js"></script>
@@ -255,8 +258,45 @@
 				format: 'yyyy-mm-dd'
 			});
 		</script>
-		<script src="js/formChecker.js"></script>
 		<script src="js/rememberinput.js"></script>	
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/additional-methods.js"></script>
+		<script>
+			$("#photoForm").validate({
+		        rules: {
+		        	inputSpecies: {
+		        		required: true
+		        	},
+		        	inputSightingDate : {
+		        		required: true
+		        	},
+		        	inputLatitudeDec: {
+		        		required: function(element) {
+		        			return $("#inputLatitudeDeg").val() == '' || $("#inputLatitudeDeg").val() == null;
+		        		}
+		        	},
+		        	inputLongitudeDec: {
+		        		required: function(element) {
+		        			return $("#inputLongitudeDeg").val() == '' || $("#inputLongitudeDeg").val() == null;
+		        		}
+		        	},
+		        	inputFirstName: {
+				        required: function(element) {
+				        	return $("#inputLastName").val() == '' || $("#inputLastName").val() == null;
+				        }
+				    },
+				    inputLastName: {
+				        required: function(element) {
+				        	return $("#inputFirstName").val() == '' || $("#inputFirstName").val() == null;
+				        }
+				    },
+		            inputEmail: {
+		                required: true
+		                }
+		        }
+		    });
+		</script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

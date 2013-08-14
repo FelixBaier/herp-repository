@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<title>Practice Form</title>
+	</head>
+	
+	<body>
+		<form id="testForm" method="post" action="">
+			<label for='name'>Name: </label>
+			<input id="name" name="name" autofocus placeholder="Name Goes Here" />
+			<label for="email">Email: </label>
+			<input id="email" name="email" type="email" placeholder="Email Here" />
+			<label for="message">Message: </label>
+			<textarea id="message" name="message" placeholder="Comments go here ..."></textarea>
+			<input id="submit" type="submit" value="Submit" />
+		</form>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+		<script>
+		$("#testForm").validate({
+			rules: {
+				name: {
+					required: function(element) {
+						return $("#email").val() == '' || $("#email").val() == null;
+					}
+				},
+				email: {
+					required: function(element) {
+						return $("#name").val() == '' || $("#name").val() == null;
+					}
+				}
+			}
+		})
+		</script>
+		
+	</body>
+</html>
