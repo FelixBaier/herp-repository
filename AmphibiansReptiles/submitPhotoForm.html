@@ -263,6 +263,25 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/additional-methods.js"></script>
 		<script>
+			jQuery.extend(jQuery.validator.messages, {
+			    required: "<p class='text-error'> This field is required. </p>",
+			    remote: "<p class='text-error'>Please fix this field.</p>",
+			    email: "<p class='text-warning'>Please enter a valid email address. </p>",
+			    url: "Please enter a valid URL.",
+			    date: "Please enter a valid date.",
+			    dateISO: "Please enter a valid date (ISO).",
+			    number: "Please enter a valid number.",
+			    digits: "Please enter only digits.",
+			    creditcard: "Please enter a valid credit card number.",
+			    equalTo: "Please enter the same value again.",
+			    accept: "Please enter a value with a valid extension.",
+			    maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
+			    minlength: jQuery.validator.format("Please enter at least {0} characters."),
+			    rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+			    range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+			    max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+			    min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+			});
 			$("#photoForm").validate({
 		        rules: {
 		        	inputSpecies: {
@@ -294,7 +313,20 @@
 		            inputEmail: {
 		                required: true
 		                }
-		        }
+		        },
+		        invalidHandler: function(event, validator) {
+				    // 'this' refers to the form
+				    var errors = validator.numberOfInvalids();
+				    if (errors) {
+				      var message = 'You missed ' + errors + ' required fields. They have been highlighted, please correct these fields then try again.';
+				      alert(message);
+				    }
+				},
+		        submitHandler: 
+		        	function() { 
+		        		alert("Success!");
+		        		form.submit();
+		        	}
 		    });
 		</script>
 
