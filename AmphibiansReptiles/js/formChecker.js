@@ -35,7 +35,7 @@ function formChecker(){
   }
 				else if(sciNameForm.inputFirstName.value == '' || sciNameForm.inputFirstName.value == null) {
 					if(sciNameForm.inputLastName.value == '' || sciNameForm.inputLastName.value == null) {
-	    alert("Please submit your name, it helps us keep track of the total number of users. Don't worry, we wont share your personal information with anyone.");
+	    alert("Please submit your name, it helps us keep track of the total number of users. Don't worry, we won't share your personal information with anyone.");
 	    sciNameForm.inputFirstName.focus();
 	    return false;
 	 }

@@ -124,10 +124,9 @@ if(($channel == P)
 	echo "<link rel='stylesheet' type='text/css' href='css/bootstrap-responsive.css' />";
 	echo "<div class='container'>
 		<div class='row'>
-			<h2 class='text-success'>Data input has succeeded!</h2>
+			<h2 class='text-success'>Data input has succeeded, but the image upload seems to have failed!</h2>
 				<div class='span11 offset1'>
 					<p class='lead' align='justify'>
-						Data input has succeeded, however the image upload seems to have failed.
 						Please submit your image(s) via email to: info@HerpRepository.org. Kindly include your 
 						submission ID number in the email subject. <br>
 						SUBMISSION ID NUMBER: " . $photoID . "<br> error code: " . $file_upload_error . "<br>
